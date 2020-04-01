@@ -4,13 +4,12 @@ import {
   View,
   Text,
 } from 'react-native';
+import RootStack from './RootStack';
 
 class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>App.js</Text>
-      </View>
+      <RootStack />
     );
   }
 }
