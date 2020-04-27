@@ -50,7 +50,7 @@ class SwiperComponent extends Component {
                     <View style={styles.footer}>
                         <Text style={styles.title}>Cloud Storage</Text>
                         <Text style={styles.text}>
-                            Thank you for watching my video and hope to get more tips for the next videos better.
+                            Meet your business challenges head on with cloud computing services from us.
                         </Text>
                     </View>
                 </View>
@@ -70,7 +70,7 @@ class SwiperComponent extends Component {
                     <View style={styles.footer}>
                         <Text style={styles.title}>Share Storage</Text>
                         <Text style={styles.text}>
-                            Thank you for watching my video and hope to get more tips for the next videos better.
+                            Modernize your workloads on world-class infrastructure.
                         </Text>
                         <View style={styles.button}>
 
@@ -157,7 +157,8 @@ class SwiperComponent extends Component {
                     <View style={styles.footer}>
                         <Text style={styles.title}>Solve More With Cloud</Text>
                         <Text style={styles.text}>
-                            Thank you for watching my video and hope to get more tips for the next videos better.
+                            
+                            Build applications once and run them in hybrid and multi-cloud environments.
                         </Text>
                     </View>
                 </View>
@@ -217,7 +218,8 @@ const styles = StyleSheet.create({
     text: {
 
         textAlign: "center",
-        color: 'gray',
+        fontSize: 16,
+        color: '#686868',
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 18,
