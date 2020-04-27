@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         flexDirection: 'column',
-        marginHorizontal: 15,
+        // marginHorizontal: 15,
         backgroundColor: 'white'
     },
 
