@@ -1,8 +1,32 @@
 import React, { Component } from 'react';
 import Swiper from 'react-native-swiper';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import * as Animatable from 'react-native-animatable';
 
 class SwiperComponent extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            animationSignup: '',
+            animationLogin: '',
+        }
+    }
+
+    onIndexChanged(index) {
+        if (index == 1) {
+            this.setState({
+                animationLogin: 'bounceInRight',
+                animationSignup: 'bounceInLeft'
+            });
+        } else {
+            this.setState({
+                animationLogin: '',
+                animationSignup: ''
+            });
+        }
+    }
+
     render() {
         return (
             <Swiper
@@ -10,6 +34,7 @@ class SwiperComponent extends Component {
                 style={styles.container}
                 dot={< View style={styles.dot} />}
                 activeDot={< View style={styles.activeDot} />}
+                onIndexChanged={(index) => { this.onIndexChanged(index) }}
             >
 
                 {/* Slide 1 */}
@@ -49,39 +74,95 @@ class SwiperComponent extends Component {
                         </Text>
                         <View style={styles.button}>
 
-                            <TouchableOpacity style={styles.tp}>
-                                <Text style={{
+                            <Animatable.View
 
-                                    borderColor: '#3465d9',
-                                    borderWidth: 1,
-                                    borderColor: '#3465d9',
-                                    color: '#3465d9',
-                                    fontWeight: 'bold',
-                                    fontSize: 20,
-                                    paddingTop: 10,
-                                    paddingBottom: 10,
-                                    textAlign: 'center',
-                                    borderRadius: 50,
-                                }} >Sign Up</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.tp}>
-                                <Text style={{
+                                animation={this.state.animationSignup}
+                                iterationCount={1}
+                                delay={0}
+                                duration={1500}
+                                useNativeDriver
+                                style={styles.tp}
+                            >
 
-                                    backgroundColor: '#3465d9',
-                                    color: 'white',
-                                    fontWeight: 'bold',
-                                    fontSize: 20,
-                                    paddingTop: 10,
-                                    paddingBottom: 10,
-                                    textAlign: 'center',
-                                    borderRadius: 50,
-                                }} >Login</Text>
-                            </TouchableOpacity>
+                                <TouchableOpacity
+                                    onPress={() => this.props.navigation.navigate('SignUpScreen')}
+                                    style={{ marginRight: 10 }}
+                                >
+
+                                    <Text style={{
+
+                                        borderColor: '#3465d9',
+                                        borderWidth: 1,
+                                        borderColor: '#3465d9',
+                                        color: '#3465d9',
+                                        fontWeight: 'bold',
+                                        fontSize: 20,
+                                        paddingTop: 10,
+                                        paddingBottom: 10,
+                                        paddingRight: 20,
+                                        paddingLeft: 20,
+                                        textAlign: 'center',
+                                        borderRadius: 50,
+                                    }} >Sign Up</Text>
+                                </TouchableOpacity>
+                            </Animatable.View>
+
+                            <Animatable.View
+                                animation={this.state.animationLogin}
+                                iterationCount={1}
+                                delay={0}
+                                duration={1500}
+                                useNativeDriver
+                                style={styles.tp}
+                            >
+
+                                <TouchableOpacity
+                                    onPress={() => this.props.navigation.navigate('LoginScreen')}
+                                    style={{ marginRight: 10 }}
+                                >
+
+                                    <Text style={{
+
+                                        paddingTop: 10,
+                                        paddingBottom: 10,
+                                        paddingRight: 30,
+                                        paddingLeft: 30,
+                                        backgroundColor: '#3465d9',
+                                        color: 'white',
+                                        fontWeight: 'bold',
+                                        fontSize: 20,
+                                        paddingTop: 11,
+                                        paddingBottom: 11,
+                                        textAlign: 'center',
+                                        borderRadius: 50,
+                                    }} >Login</Text>
+                                </TouchableOpacity>
+                            </Animatable.View>
                         </View>
                     </View>
                 </View>
 
                 {/* Slide 2 End */}
+
+                {/* Slide 3 */}
+
+                <View style={styles.slide}>
+                    <View style={styles.header}>
+                        <Image
+                            style={styles.image}
+                            source={require('./asset/asset3.png')}
+                            resizeMode="stretch"
+                        />
+                    </View>
+                    <View style={styles.footer}>
+                        <Text style={styles.title}>Solve More With Cloud</Text>
+                        <Text style={styles.text}>
+                            Thank you for watching my video and hope to get more tips for the next videos better.
+                        </Text>
+                    </View>
+                </View>
+
+                {/* Slide 3 End */}
 
             </Swiper>
         );
@@ -96,11 +177,13 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'blue',
     },
+
     slide2: {
 
         flex: 1,
         backgroundColor: 'blue',
     },
+
     header: {
 
         flex: 2,
@@ -108,11 +191,13 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+
     footer: {
 
         flex: 1,
         backgroundColor: 'white'
     },
+
     image: {
 
         width: '80%',
@@ -120,6 +205,7 @@ const styles = StyleSheet.create({
         // flex: 0.7,
         // backgroundColor: 'green',
     },
+
     title: {
 
         fontSize: 25,
@@ -127,6 +213,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
         color: '#3465d9',
     },
+
     text: {
 
         textAlign: "center",
@@ -148,6 +235,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 5,
         marginVertical: 3
     },
+
     activeDot: {
 
         backgroundColor: '#3465d9',
@@ -157,6 +245,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 5,
         marginVertical: 3
     },
+
     button: {
 
         // backgroundColor: '#3465d9',
@@ -170,11 +259,12 @@ const styles = StyleSheet.create({
 
     tp: {
 
-        marginRight: 10,
-        color: '#3465d9',
-        width: '30%',
-        textAlign: "center",
-        justifyContent: 'center',
+        // backgroundColor: 'red',
+        // marginRight: 10,
+        // color: '#3465d9',
+        // width: '30%',
+        // textAlign: "center",
+        // justifyContent: 'center',
     }
 });
 
