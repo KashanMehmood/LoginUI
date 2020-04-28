@@ -30,7 +30,7 @@ class SwiperComponent extends Component {
     render() {
         return (
             <Swiper
-                loop={true}
+                loop={false}
                 style={styles.container}
                 dot={< View style={styles.dot} />}
                 activeDot={< View style={styles.activeDot} />}
@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
 
     header: {
 
-        flex: 2,
+        flex: 1.3,
         backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',

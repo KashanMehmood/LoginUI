@@ -28,7 +28,7 @@ class LoginComponent extends Component {
                 <View style={[
                     styles.section,
                     {
-                        borderColor: this.state.borderColor == 'email' ? '#3465d9' : '#457edc'
+                        borderColor: this.state.borderColor == 'email' ? '#3465d9' : '#6695e2'
                     }
                 ]}>
                     <MaterialIcons
@@ -38,7 +38,7 @@ class LoginComponent extends Component {
                         style={[
                             styles.icon,
                             {
-                                color: this.state.borderColor == 'email' ? '#3465d9' : '#457edc'
+                                color: this.state.borderColor == 'email' ? '#3465d9' : '#6695e2'
                             }
                         ]}
                     />
@@ -53,7 +53,7 @@ class LoginComponent extends Component {
                 <View style={[
                     styles.section,
                     {
-                        borderColor: this.state.borderColor == 'password' ? '#3465d9' : '#457edc'
+                        borderColor: this.state.borderColor == 'password' ? '#3465d9' : '#6695e2'
                     }
                 ]}>
 
@@ -63,7 +63,7 @@ class LoginComponent extends Component {
                         style={[
                             styles.icon,
                             {
-                                color: this.state.borderColor == 'password' ? '#3465d9' : '#457edc'
+                                color: this.state.borderColor == 'password' ? '#3465d9' : '#6695e2'
                             }
                         ]}
                     />
