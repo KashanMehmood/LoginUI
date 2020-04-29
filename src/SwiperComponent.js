@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
 
     header: {
 
-        flex: 1.3,
+        flex: 1,
         backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',
@@ -195,16 +195,18 @@ const styles = StyleSheet.create({
 
     footer: {
 
-        flex: 1,
+        // flex: 1,
+        width: '100%',
+        height: 225,
         backgroundColor: 'white'
     },
 
     image: {
 
+        // flex: 0.7,
         width: '80%',
         height: '80%',
-        // flex: 0.7,
-        // backgroundColor: 'green',
+        backgroundColor: 'white',
     },
 
     title: {
@@ -220,8 +222,8 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontSize: 16,
         color: '#686868',
-        justifyContent: 'center',
-        alignItems: 'center',
+        // justifyContent: 'center',
+        // alignItems: 'center',
         marginTop: 18,
         marginLeft: 30,
         marginRight: 30,
